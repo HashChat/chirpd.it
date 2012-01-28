@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120128115327) do
+ActiveRecord::Schema.define(:version => 20120128231513) do
 
   create_table "hashtags", :force => true do |t|
     t.string   "name"
@@ -20,22 +20,20 @@ ActiveRecord::Schema.define(:version => 20120128115327) do
   end
 
   create_table "messages", :force => true do |t|
-    t.integer  "hashtag_id"
+    t.integer  "hash_id"
     t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "messages", ["hashtag_id"], :name => "index_messages_on_hash_id"
+  add_index "messages", ["hash_id"], :name => "index_messages_on_hash_id"
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "users", :force => true do |t|
     t.integer  "twitter_id"
-    t.string   "oauth_token"
-    t.string   "oauth_token_secret"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
