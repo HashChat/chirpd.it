@@ -1,0 +1,9 @@
+twitter-chat!
+
+Here's the basic experience we're starting with:
+
+You are Joey Startup guy, and you read a tweet from startup guy Devin you are following from Startup Weekend saying "I just joined a live chat on #SWSJ Come join: twitterchat.domain/#SWSJ"
+
+You click the link to come join the chat, and are brought a public view of the chat room. To begin chatting, you need to sign in with twitter. Whenever you join a chat room, in some fashion, we want to get a tweet out announcing this.
+
+I would say the rest has yet to be really set in stone, so I'll stop here.
