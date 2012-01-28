@@ -1,4 +1,11 @@
-<%= form_for Hashtag.new, :remote => true do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit "Send" %>
+
+<%= form_for(@hashtag) do |ht| %>
+  <%= render 'shared/error_messages', :object => ht.object %>
+	<div class="field">
+	  <%= ht.label :name %><br />
+	  <%= ht.text_field :name %>
+	</div>
+	  <div class="actions">
+    <%= ht.submit "create" %>
+  </div>  
 <% end %>
