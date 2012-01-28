@@ -1,3 +1,4 @@
+<html>
 <ul>
   <%= render @hashtags %>
 </ul>
@@ -10,7 +11,36 @@
     height: 100%;
     position: fixed;
   }
+  #leftColumn {
+    width: 22%;
+    position: absolute;
+  }
 </style>
 <div id="main">
-   
+
+  <div id="leftColumn">
+    
+  </div> 
+  
+  
+  <style type="text/css">
+    #rightChat {
+      width: 78%;
+    }
+    #go {
+      width: 50px;
+      height: 50px;
+      background: rgb(60, 166, 248);
+      color: white;
+    }
+  </style>
+  <div id="rightChat">
+    <div id="title">
+      <input type="text" id="titleInput" name="titleInput">
+      <span id="go">go</span>
+    </div>
+  
+  </div>
+
 </div>
+</html>
