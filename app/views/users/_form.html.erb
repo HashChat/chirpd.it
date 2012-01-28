@@ -1,0 +1,31 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label        :twitter_id %>:
+  <%= f.number_field :twitter_id %>
+  <br/>
+
+  <div>
+    <%= f.label :oauth_token %>
+    <%= f.text_field :oauth_token %>
+  </div>
+
+  <div>
+    <%= f.label :oauth_token_secret %>
+    <%= f.text_field :oauth_token_secret %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
