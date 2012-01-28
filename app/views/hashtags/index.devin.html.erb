@@ -1,13 +1,62 @@
 <!-- Devin's html/css hard coding -->
+<script type="text/javascript">
+  window.trueUrl = false; //I'm working locally, switch this to true for pushing :/
+</script>
 <style type="text/css">
+
+/*temp import from app template*/
+        /*reset css from yui*/
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+        form,fieldset,input,textarea,p,blockquote,th,td{ 
+          margin:0;
+          padding:0;
+        }
+        table {
+          border-collapse:collapse;
+          border-spacing:0;
+        }
+        fieldset,img { 
+          border:0;
+        }
+        address,caption,cite,code,dfn,em,strong,th,var {
+          font-style:normal;
+          font-weight:normal;
+        }
+        ol,ul {
+          list-style:none;
+        }
+        caption,th {
+          text-align:left;
+        }
+        h1,h2,h3,h4,h5,h6 {
+          font-size:100%;
+          font-weight:normal;
+        }
+        q:before,q:after {
+          content:'';
+        }
+        abbr,acronym { border:0;
+        }
+        html {
+          -moz-font-smoothing:antialiased !important;
+          -o-font-smoothing:antialiased !important;
+          -webkit-font-smoothing:antialiased !important;
+          -ms-font-smoothing:antialiased !important;
+          font-smoothing:antialiased !important;
+          font-family:"Myriad Pro","Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+        }
+/*end temp import from app template*/
+        
+
   #main {
-    width: 100%;
+    width: 980px;
     height: 100%;
-    position: fixed;
+    margin: auto;
   }
   #leftColumn {
-    width: 22%;
-    position: absolute;
+    width: 343px;
+    position: relative;
+    left: 0px;
   }
 </style>
 <div id="main">
@@ -17,29 +66,68 @@
        
     </div>
     <script type="text/javascript">
-      function insertTweets() {
       
+      //Devin's DOM methods (faster than jQuery!)
+      window.d = {};
+      var doc = document;
+      d.id = function(el) {
+        return doc.getElementById(el);
       }
-      getTweets('', )
+      d.class = function(el) {
+        return doc.getElementsByClassName('');
+      }
+      
+      window.url = window.location.href;
+      function insertTweets() {
+        
+      }
+      if (url.indexOf('chirped.it/#') > 0) {
+        window.topic = url.substr(url.indexOf('chirped.it/#') + 12, url.length);
+        getTweets(topic, insertTweets);
+      } else {
+        window.topic = 'devin-default';
+        trueUrl && alert('expecting the url format chirped.it/#foo -devin');
+      }
     </script>
   </div> 
   
   
   <style type="text/css">
     #rightChat {
-      width: 78%;
+      width: 637px; /*65% of 980px*/
+      right: 0px;
+      position: relative;
+      float: right;
     }
     #go {
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       background: rgb(60, 166, 248);
       color: white;
+      display: block;
+      font-size: 74px;
+      cursor: pointer;
+      float: right;
+    }
+    #go > span {
+      position: relative;
+      left: 9px;
+      bottom: 3px;
+    }
+    #titleInput {
+      font-size: 74px;
+      width: 534px;
     }
   </style>
   <div id="rightChat">
     <div id="title">
-      <input type="text" id="titleInput" name="titleInput">
-      <span id="go">go</span>
+      <input type="text" id="titleInput" name="titleInput" value="#">
+      <script type="text/javascript">
+        d.id('titleInput').setAttribute('value', '#'+topic);
+      </script>
+      <span id="go">
+        <span>go</span>
+      </span>
     </div>
   
   </div>
