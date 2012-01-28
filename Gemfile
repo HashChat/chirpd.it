@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 
 gem 'twitter'
+gem 'oauth'
 
 gem 'pg', :group => :production
 
