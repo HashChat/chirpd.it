@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/intridea/omniauth.git
+  revision: 50c354b813b0e37fac4c95f67c8c0c34a58bb924
+  ref: 50c354b813b0e37fac4c95f67c8c0c34a58bb924
+  specs:
+    omniauth (1.0.1)
+      hashie (~> 1.2)
+      rack (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +54,7 @@ GEM
       addressable (~> 2.2)
       multipart-post (~> 1.1)
       rack (~> 1.1)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.1)
@@ -61,6 +71,11 @@ GEM
     multi_json (1.0.4)
     multipart-post (1.1.4)
     oauth (0.4.5)
+    omniauth-oauth (1.0.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.7)
+      omniauth-oauth (~> 1.0)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -111,6 +126,8 @@ GEM
       faraday (~> 0.7)
       multi_json (~> 1.0)
       simple_oauth (~> 0.1)
+    twitter-text (1.4.15)
+      activesupport
     tzinfo (0.3.31)
     uglifier (1.2.2)
       execjs (>= 0.3.0)
@@ -122,11 +139,13 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
-  oauth
+  omniauth!
+  omniauth-twitter
   pg
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
   twitter
+  twitter-text
   uglifier (>= 1.0.3)

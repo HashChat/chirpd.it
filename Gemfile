@@ -23,7 +23,9 @@ end
 gem 'jquery-rails'
 
 gem 'twitter'
-gem 'oauth'
+gem 'twitter-text'
+gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git', :ref => '50c354b813b0e37fac4c95f67c8c0c34a58bb924'
+gem 'omniauth-twitter'
 
 gem 'pg', :group => :production
 
