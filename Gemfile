@@ -26,6 +26,8 @@ gem 'twitter'
 
 gem 'pg', :group => :production
 
+gem 'therubyracer'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
