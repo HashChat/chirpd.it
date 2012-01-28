@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ChirpdIt</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= title %></title>
+    <%= render 'layouts/stylesheets' %>
+  </head>
+  <body>
+   	<%= render 'layouts/header' %>
+		
+			<div class="container">
+				<div class="row">
+						<section id="flash-messages">
+			        <% flash.each do |key, value| %>
+			          <div class="flash <%= key %>"><%= value %></div>
+			        <% end %>
+			      </section>
+						<%= yield %>
+				</div>
+		</div>
+		
+		<%= debug(params) if Rails.env.development? %>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
