@@ -1,0 +1,23 @@
+
+<%= form_for(@message) do |mes| %>
+  <%= render 'shared/error_messages', :object => mes.object %>
+
+	<div class="field">
+	  <%= mes.label :hashtag_id %><br />
+	  <%= mes.text_field :hashtag_id %>
+	</div>
+
+	<div class="field">
+	  <%= mes.label :user_id %><br />
+	  <%= mes.text_field :user_id %>
+	</div>
+	
+	<div class="field">
+	  <%= mes.label :content %><br />
+	  <%= mes.text_field :content %>
+	</div>
+	
+	  <div class="actions">
+    <%= mes.submit "create" %>
+  </div>  
+<% end %>

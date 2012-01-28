@@ -1,0 +1,7 @@
+<% if @hashtag.messages.any? %>
+
+	<% @hashtag.messages.each do |message| %>
+	  $nbsp; user: <%= message.user %> $nbsp;$nbsp; Message: <%= message.content %><br/>
+	<% end %>
+
+<% end %>
