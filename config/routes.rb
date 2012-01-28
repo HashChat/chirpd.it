@@ -1,5 +1,7 @@
 ChirpdIt::Application.routes.draw do
   
+  resources :messages
+  resources :hashtags
   get "home" => "home#index", :as => "home"
   root :to => "home#index"
   
