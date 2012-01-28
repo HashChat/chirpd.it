@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   %w{twitter_id oauth_token oauth_token_secret}.each do |x|
     validates x, :presence => true
   end
+
 end

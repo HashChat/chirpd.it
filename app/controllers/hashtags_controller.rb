@@ -18,4 +18,11 @@ class HashtagsController < ApplicationController
       render 'new'
     end
   end
+  
+  def show
+    @hashtag = Hashtag.find(params[:id])
+    @messages = @hashtag.messages.all
+    @title = @hashtag.name
+  end
+  
 end
